@@ -154,3 +154,19 @@ function question(question, answer) {
 		}
 }
 
+//to check the correctness of question's from level two of the quiz
+function questiontwo(question, answer) {
+    var answer = readlineSync.question(chalk.bgYellow(question));
+       if (answer.toLowerCase() == EndGameQuesleveltwo[position].answer.toLowerCase()) {
+           console.log(chalk.green("Correct Option"));
+     score = score + 2;
+           position = position + 1;
+     checkingtwo();
+       } else {
+     score = score - 1;
+     console.log(chalk.red("InCorrect Option"));
+     console.log(chalk.green("Correct Option is : " + EndGameQuesleveltwo[position].answer));
+     position = position + 1;
+    checkingtwo();
+       }
+}
