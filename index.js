@@ -170,3 +170,21 @@ function questiontwo(question, answer) {
     checkingtwo();
        }
 }
+
+//checking if the quesposition has reached the end of the array of object
+function checking(){
+    if (EndGameQueslevelone.length == quesposition) {
+      console.log(chalk.redBright("-------------------------------------"));
+          console.log(chalk.bgBlueBright("Thanks for playing this quiz"));
+      console.log(chalk.bgCyanBright("Your level One Score is   :   " + score));
+      }
+  }
+  
+  //checking if the position has reached the end of the array of object
+  function checkingtwo(){
+    if(EndGameQuesleveltwo.length == position){
+      console.log(chalk.magentaBright("-------------------------------------"));
+          console.log(chalk.bgBlueBright("Thanks for playing this quiz"));
+      console.log(chalk.bgCyanBright("Your Final Score after level two is   :   " + score));
+    }
+  }
