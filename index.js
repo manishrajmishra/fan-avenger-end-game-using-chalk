@@ -1,11 +1,10 @@
-//bonus homework: use chalk
+//assignment: for levelOne
 
-var chalk =require("chalk");
 var readlineSync = require("readline-sync");
 var quesposition = 0; // Question position variable
 var position = 0;
 var score = 0; // score counter
-console.log(chalk.bgMagenta("Welcome to Manish Raj's quiz on The Avengers:End-Game Movie"));
+console.log("Welcome to Manish Raj's quiz on The Avengers:End-Game Movie");
 const levelone = 2;
 //Storing the question's of The Avengers:End-Game Movie in Array of Obejects
 var EndGameQueslevelone = [{
@@ -95,60 +94,60 @@ var EndGameQueslevelone = [{
 // starting the quiz
 startingthequiz();  
 function startingthequiz() {
-    var answer = readlineSync.question(chalk.bgBlueBright("I challenge you to play this quiz if you are a Avenger's Fan? \n Press 0 to exit, or any other key to continue the quiz.  "));
-    console.log(chalk.green("-------------------------------------"));
-    var userName = readlineSync.question(chalk.bgCyan("What is your name? "));
+    var answer = readlineSync.question("I challenge you to play this quiz if you are a Avenger's Fan? \n Press 0 to exit, or any other key to continue the quiz.  ");
+    console.log("------------------------------------");
+    var userName = readlineSync.question("What is your name? ");
     if(answer.toLowerCase() !== "0"){
-      console.log(chalk.bgCyanBright("Hello " + userName + ", Welcome to the The Avenger's:End-Game Quiz! "));
-      console.log(chalk.yellow("-------------------------------------"));
-      console.log(chalk.bgRed("Rules are as follows : 1. Every Correct answer will give you 2 marks.\n                       2. Every InCorrect answer will reduce your marks by 1."));
-      console.log(chalk.blue("-------------------------------------"));
-      console.log(chalk.bgCyanBright("Welcome " + userName + ", to Level One of the Quiz"));
-      console.log(chalk.black("-------------------------------------"));
+      console.log("Hello " + userName + ", Welcome to the The Avenger's:End-Game Quiz! ");
+      console.log("-------------------------------------");
+      console.log("Rules are as follows : 1. Every Correct answer will give you 2 marks.\n                       2. Every InCorrect answer will reduce your marks by 1.");
+      console.log("-------------------------------------");
+      console.log("Welcome " + userName + ", to Level One of the Quiz");
+      console.log("-------------------------------------");
       for(var i=0;i<EndGameQueslevelone.length;i++){
         question(EndGameQueslevelone[i].question, EndGameQueslevelone[i].answer);
-        console.log(chalk.magenta("-------------------------------------"));
+        console.log("-------------------------------------");
       }
       if(score > levelone){
-        var answer = readlineSync.question(chalk.bgBlueBright("You have cleared Level One, Do you want to go for Level Two? \n Press 0 to exit, or any other key to continue the quiz.  "));
+        var answer = readlineSync.question("You have cleared Level One, Do you want to go for Level Two? \n Press 0 to exit, or any other key to continue the quiz.  ");
         if(answer.toLowerCase() !== "0"){
-          console.log(chalk.cyan("-------------------------------------"));
-          console.log(chalk.bgCyanBright("Welcome " + userName + ", to Level Two of the Quiz"));
-        console.log(chalk.black("-------------------------------------"));
+          console.log("-------------------------------------");
+        console.log("Welcome " + userName + ", to Level Two of the Quiz");
+        console.log("------------------------------------");
         for(var i=0;i<EndGameQuesleveltwo.length;i++){
           questiontwo(EndGameQuesleveltwo[i].question, EndGameQuesleveltwo[i].answer);
-          console.log(chalk.blackBright("-------------------------------------"));
+          console.log("-------------------------------------");
         }
       }else{
-        console.log(chalk.redBright("-------------------------------------"));
-        console.log(chalk.bgBlueBright("Thanks for playing the Quiz."));
-        console.log(chalk.bgCyanBright("Your Final Score is  :  "   +   score));
-        console.log(chalk.blueBright("-------------------------------------"));
+        console.log("-------------------------------------");
+        console.log("Thanks for playing the Quiz.");
+        console.log("Your Final Score is  :  "   +   score);
+        console.log("-------------------------------------");
         }
       }else{
-        console.log(chalk.bgYellowBright("You haven't cleared the Level One. Better Luck Next Time."));
-        console.log(chalk.yellowBright("-------------------------------------"));
+        console.log("You haven't cleared the Level One. Better Luck Next Time.");
+        console.log("-------------------------------------");
       }
     }else{
-      console.log(chalk.greenBright("-------------------------------------"));
-      console.log(chalk.bgBlackBright("Ohh no " + userName +  ", you haven't played the Quiz. It seems you are not the Fan of The Avenger:End-Game! "));
-      console.log(chalk.bgRed("Your Score is  :  "   +   score));
-      console.log(chalk.cyanBright("-------------------------------------"));
+      console.log("-------------------------------------");
+      console.log("Ohh no " + userName +  ", you haven't played the Quiz. It seems you are not the Fan of The Avenger:End-Game! ");
+      console.log("Your Score is  :  "   +   score);
+      console.log("-------------------------------------");
     }
 }
 
 //to check the correctness of question's from level one of the quiz
 function question(question, answer) {
-	 var answer = readlineSync.question(chalk.bgYellow(question));
+	 var answer = readlineSync.question(question);
 		if (answer.toLowerCase() == EndGameQueslevelone[quesposition].answer.toLowerCase()) {
-			console.log(chalk.green("Correct Option"));
+			console.log("Correct Option");
       score = score + 2;
 			quesposition = quesposition + 1;
       checking();
 		} else {
       score = score - 1;
-      console.log(chalk.red("InCorrect Option"));
-      console.log(chalk.green("Correct Option is : " + EndGameQueslevelone[quesposition].answer));
+      console.log("InCorrect Option");
+      console.log("Correct Option is : " + EndGameQueslevelone[quesposition].answer);
       quesposition = quesposition + 1;
       checking();
 		}
@@ -156,35 +155,35 @@ function question(question, answer) {
 
 //to check the correctness of question's from level two of the quiz
 function questiontwo(question, answer) {
-    var answer = readlineSync.question(chalk.bgYellow(question));
-       if (answer.toLowerCase() == EndGameQuesleveltwo[position].answer.toLowerCase()) {
-           console.log(chalk.green("Correct Option"));
-     score = score + 2;
-           position = position + 1;
+	 var answer = readlineSync.question(question);
+		if (answer.toLowerCase() == EndGameQuesleveltwo[position].answer.toLowerCase()) {
+			console.log("Correct Option");
+      score = score + 2;
+			position = position + 1;
+      checkingtwo();
+		} else {
+      score = score - 1;
+      console.log("InCorrect Option");
+      console.log("Correct Option is : " + EndGameQuesleveltwo[position].answer);
+      position = position + 1;
      checkingtwo();
-       } else {
-     score = score - 1;
-     console.log(chalk.red("InCorrect Option"));
-     console.log(chalk.green("Correct Option is : " + EndGameQuesleveltwo[position].answer));
-     position = position + 1;
-    checkingtwo();
-       }
+		}
 }
 
 //checking if the quesposition has reached the end of the array of object
 function checking(){
-    if (EndGameQueslevelone.length == quesposition) {
-      console.log(chalk.redBright("-------------------------------------"));
-          console.log(chalk.bgBlueBright("Thanks for playing this quiz"));
-      console.log(chalk.bgCyanBright("Your level One Score is   :   " + score));
-      }
+  if (EndGameQueslevelone.length == quesposition) {
+    console.log("-------------------------------------");
+		console.log("Thanks for playing this quiz");
+    console.log("Your level One Score is   :   " + score);
+	}
+}
+
+//checking if the position has reached the end of the array of object
+function checkingtwo(){
+  if(EndGameQuesleveltwo.length == position){
+    console.log("-------------------------------------");
+		console.log("Thanks for playing this quiz");
+    console.log("Your Final Score after level two is   :   " + score);
   }
-  
-  //checking if the position has reached the end of the array of object
-  function checkingtwo(){
-    if(EndGameQuesleveltwo.length == position){
-      console.log(chalk.magentaBright("-------------------------------------"));
-          console.log(chalk.bgBlueBright("Thanks for playing this quiz"));
-      console.log(chalk.bgCyanBright("Your Final Score after level two is   :   " + score));
-    }
-  }
+}
